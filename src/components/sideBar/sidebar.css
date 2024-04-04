@@ -1,0 +1,38 @@
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  height: 100%;
+  width: 16rem;
+}
+
+.sidebar-links ul li {
+    list-style: none;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.icons:hover {
+    color: #000EF8;
+    border-radius: 10px;
+    cursor: pointer;
+    fill: #000EF8;
+}
+
+.icon {
+    color: #000EF8;
+}

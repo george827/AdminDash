@@ -3,6 +3,8 @@ import './App.css'
 import React from 'react'
 // import { useState } from 'react'
 import NavBar from './components/navBar/navbar'
+import SideBar from './components/sideBar/sidebar'
+import AllSchools from './components/schools/allSchools/allSchools'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -11,8 +13,11 @@ function App() {
     <>
       <NavBar />
       <div>
-       <p>hello world</p>
-        
+        <SideBar />
+        <div>
+          <AllSchools />
+
+        </div>
       </div>  
     </>
   )

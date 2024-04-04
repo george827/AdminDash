@@ -33,6 +33,15 @@
    
 }
 
+.welcome > div > h5 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: left;
+    font-family: Inter;
+    color: #333333;
+}
+
 /* .bell {
     margin-top: 20px;
 } */
