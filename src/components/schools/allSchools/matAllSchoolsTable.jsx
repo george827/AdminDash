@@ -9,9 +9,13 @@ import {
   Paper,
   TablePagination,
   Button,
-  Menu, 
-  MenuItem
+  Menu,
+  MenuItem,
+  Tooltip,
+  IconButton,
+  TextField
 } from "@mui/material";
+import FilterListIcon from "@mui/icons-material/FilterList";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const data = [
@@ -152,6 +156,7 @@ const MyTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0]);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [filterText, setFilterText] = useState("");
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -165,31 +170,71 @@ const MyTable = () => {
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+  const handleMenuClick2 = (event) => {
+    console.log(event.currentTarget);
+  };
 
   const handleCloseMenu = () => {
     setAnchorEl(null);
   };
+  const handleFilterChange = (event) => {
+    setFilterText(event.target.value);
+  };
+
+  const handleFilterOptionClick = (option) => {
+    setFilterBy(option);
+    setAnchorEl(null); // Close the filter menu
+};
+
+  const filteredData = data.filter((item) =>
+    Object.values(item).some((value) =>
+      value.toString().toLowerCase().includes(filterText.toLowerCase())
+    )
+  );
+  
 
   return (
     <TableContainer component={Paper} sx={{ borderRadius: "10px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "10px",
+        }}
+      >
+        <Tooltip title="Filter list">
+          <IconButton onClick={handleMenuClick2}>
+            <FilterListIcon />
+          </IconButton>
+        </Tooltip>
+        <TextField
+          variant="outlined"
+          label="Search for schools"
+          value={filterText}
+          onChange={handleFilterChange}
+        />
+      </div>
       <Table>
         <TableHead sx={{ backgroundColor: "#F5F5F5" }}>
           <TableRow>
             {columns.map((column) => (
               <TableCell key={column.id}>{column.label}</TableCell>
             ))}
-            <TableCell align="center" colSpan={2}>Actions</TableCell>
+            <TableCell align="center" colSpan={2}>
+              Actions
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data
+          {filteredData
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((row, index) => (
               <TableRow key={index}>
                 {columns.map((column) => (
                   <TableCell key={column.id}>{row[column.id]}</TableCell>
                 ))}
-                <TableCell align="center">
+                <TableCell>
                   <Button onClick={handleMenuClick}>
                     <MoreVertIcon />
                   </Button>
@@ -209,7 +254,7 @@ const MyTable = () => {
       <TablePagination
         rowsPerPageOptions={rowsPerPageOptions}
         component="div"
-        count={data.length}
+        count={filteredData.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
