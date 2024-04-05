@@ -41,10 +41,10 @@ const AllSchools = () => {
               onto the platform
             </p>
           </div>
-          <div className="register">
+          <button className="register">
             <img src={Add} alt="add" className="add" />
             <p>Register School</p>
-          </div>
+          </button>
         </div>
         <div className="table">
           <MyTable />

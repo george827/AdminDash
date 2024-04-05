@@ -4,6 +4,7 @@
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
+  width : 100%;
 }
 
 .schoo-info {
@@ -13,13 +14,15 @@
 
 .register {
   background-color: #000ef8;
-  padding: 0 0.5rem;
+  padding: 0.5rem;
   border-radius: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
   margin-right: 5rem;
+  border: none;
+  height: 56px;
 }
 
 .register:hover{
@@ -35,12 +38,9 @@
   font-family: Inter;
   font-size: 14px;
   font-weight: 700;
-  /* line-height: 28px; */
   text-align: center;
 }
 .schoolplatforms {
-  /* display: flex; */
-  /* justify-content: space-between; */
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -51,6 +51,6 @@
 }
 
 .table {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
