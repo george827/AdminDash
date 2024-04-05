@@ -10,25 +10,41 @@ const AllSchools = () => {
   return (
     <>
       <div className="numbers">
-        <div>
-          <img src={schoolsLogo} alt="schoolLogpo" />
-          <span className="figures"> 32806</span>
-          <p>schools on platform</p>
+        <div className="stats">
+          <div className="schools-icon">
+            <img src={schoolsLogo} alt="schoolLogpo" />
+          </div>
+          <div>
+            <span className="figures"> 32806</span>
+            <p>schools on platform</p>
+          </div>
         </div>
-        <div>
-          <img src={PostingSchhools} alt="schoolLogpo" />
-          <span className="figures"> 32806</span>
-          <p>Posting schools</p>
+        <div className="stats">
+          <div className="schools-icon">
+            <img src={PostingSchhools} alt="schoolLogpo" />
+          </div>
+          <div>
+            <span className="figures"> 32806</span>
+            <p>Posting schools</p>
+          </div>
         </div>
-        <div>
-          <img src={PostingSchhools} alt="schoolLogpo" />
-          <span className="figures"> 32806</span>
-          <p>Average post per school</p>
+        <div className="stats">
+          <div className="schools-icon">
+            <img src={PostingSchhools} alt="schoolLogpo" />
+          </div>
+          <div>
+            <span className="figures"> 32806</span>
+            <p>Average post per school</p>
+          </div>
         </div>
-        <div>
-          <img src={wallet} alt="schoolLogpo" />
-          <span className="figures">ksh 32806</span>
-          <p>Spend on post</p>
+        <div className="stats">
+          <div className="schools-icon">
+            <img src={wallet} alt="schoolLogpo" />
+          </div>
+          <div>
+            <span className="figures">ksh 32806</span>
+            <p>Spend on post</p>
+          </div>
         </div>
       </div>
 
